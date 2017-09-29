@@ -23,6 +23,17 @@ RUN apt-get update -y && apt-get install -y \
     zlib1g-dev
 
 ##############
+#TOPHAT 2.1.1#
+##############
+
+RUN mkdir /opt/tophat2/ \
+    && cd /opt/tophat2 \
+    && wget http://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.1.Linux_x86_64.tar.gz
+    && tar -xzvf tophat-2.1.1.Linux_x86_64.tar.gz \
+    && ln -s /opt/tophat2/tophat-2.1.1.Linux_x86_64/stringtie /usr/bin/tophat2 \
+    && rm tophat-2.1.1.Linux_x86_64.tar.gz
+
+##############
 #HISAT2 2.0.5#
 ##############
 
