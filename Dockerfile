@@ -23,6 +23,17 @@ RUN apt-get update -y && apt-get install -y \
     zlib1g-dev
 
 ##############
+#BOWTIE 2.3.3#
+##############
+
+RUN mkdir /opt/bowtie2/ \
+    && cd /opt/bowtie2 \
+    && https://downloads.sourceforge.net/project/bowtie-bio/bowtie2/2.3.3/bowtie2-2.3.3-linux-x86_64.zip?r=&ts=1506899226&use_mirror=cfhcable \
+    && unzip bowtie2-2.3.3-linux-x86_64.zip \
+    && ln -s bowtie2-2.3.3-linux-x86_64 /usr/bin/bowtie2 \
+    && rm bowtie2-2.3.3-linux-x86_64.zip
+
+##############
 #TOPHAT 2.1.1#
 ##############
 
