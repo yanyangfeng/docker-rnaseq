@@ -29,7 +29,7 @@ RUN apt-get update -y && apt-get install -y \
 RUN mkdir /opt/samtools/ \
     && cd /opt/samtools/ \
     && wget https://github.com/samtools/samtools/releases/download/1.6/samtools-1.6.tar.bz2 \
-    && tar -xvfj samtools-1.6.tar.bz2 \
+    && tar -vxjf samtools-1.6.tar.bz2 \
     && ln -s samtools-1.6 /usr/bin/samtools \
     && rm samtools-1.6.tar.bz2
 
