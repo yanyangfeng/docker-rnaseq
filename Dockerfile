@@ -23,14 +23,14 @@ RUN apt-get update -y && apt-get install -y \
     zlib1g-dev
 
 ##############
-#SAMTOOLS 1.6#
+#SAMTOOLS 1.0#
 ##############
 
 RUN mkdir /opt/samtools/ \
     && cd /opt/samtools/ \
-    && wget https://github.com/samtools/samtools/releases/download/1.6/samtools-1.6.tar.bz2 \
+    && wget https://downloads.sourceforge.net/project/samtools/samtools/1.0/samtools-bcftools-htslib-1.0_x64-linux.tar.bz2?r=&ts=1506905896&use_mirror=versaweb
     && tar -vxjf samtools-1.6.tar.bz2 \
-    && ln -s samtools-1.6 /usr/bin/samtools \
+    && ln -s samtools-1.6/samtools /usr/bin/samtools \
     && rm samtools-1.6.tar.bz2
 
 ##############
@@ -41,7 +41,7 @@ RUN mkdir /opt/bowtie2/ \
     && cd /opt/bowtie2 \
     && wget https://downloads.sourceforge.net/project/bowtie-bio/bowtie2/2.3.3/bowtie2-2.3.3-linux-x86_64.zip?r=&ts=1506899226&use_mirror=cfhcable \
     && unzip bowtie2-2.3.3-linux-x86_64.zip \
-    && ln -s bowtie2-2.3.3-linux-x86_64 /usr/bin/bowtie2 \
+    && ln -s /opt/bowtie2/bowtie2-2.3.3-linux-x86_64/bowtie2 /usr/bin/bowtie2 \
     && rm bowtie2-2.3.3-linux-x86_64.zip
 
 ##############
@@ -52,7 +52,7 @@ RUN mkdir /opt/tophat2/ \
     && cd /opt/tophat2 \
     && wget http://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.1.Linux_x86_64.tar.gz \
     && tar -xzvf tophat-2.1.1.Linux_x86_64.tar.gz \
-    && ln -s /opt/tophat2/tophat-2.1.1.Linux_x86_64/stringtie /usr/bin/tophat2 \
+    && ln -s /opt/tophat2/tophat-2.1.1.Linux_x86_64/tophat /usr/bin/tophat2 \
     && rm tophat-2.1.1.Linux_x86_64.tar.gz
 
 ##############
