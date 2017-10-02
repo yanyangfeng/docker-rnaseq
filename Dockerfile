@@ -29,9 +29,9 @@ RUN apt-get update -y && apt-get install -y \
 RUN mkdir /opt/samtools/ \
     && cd /opt/samtools/ \
     && wget https://downloads.sourceforge.net/project/samtools/samtools/1.0/samtools-bcftools-htslib-1.0_x64-linux.tar.bz2?r=&ts=1506905896&use_mirror=versaweb \
-    && tar -vxjf samtools-1.6.tar.bz2 \
-    && ln -s samtools-1.6/samtools /usr/bin/samtools \
-    && rm samtools-1.6.tar.bz2
+    && tar -vxjf samtools-bcftools-htslib-1.0_x64-linux.tar.bz2 \
+    && ln -s samtools-bcftools-htslib-1.0_x64-linux/bin/samtools /usr/bin/samtools \
+    && rm samtools-bcftools-htslib-1.0_x64-linux.tar.bz2
 
 ##############
 #BOWTIE 2.3.3#
