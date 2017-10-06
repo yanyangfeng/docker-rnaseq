@@ -42,6 +42,9 @@ RUN mkdir /opt/bowtie2/ \
     && wget -O bowtie2-2.3.3-linux-x86_64.zip 'https://downloads.sourceforge.net/project/bowtie-bio/bowtie2/2.3.3/bowtie2-2.3.3-linux-x86_64.zip?r=&ts=1506899226&use_mirror=cfhcable' \
     && unzip bowtie2-2.3.3-linux-x86_64.zip \
     && ln -s /opt/bowtie2/bowtie2-2.3.3/bowtie2 /usr/bin/bowtie2 \
+    && ln -s /opt/bowtie2/bowtie2-2.3.3/bowtie2-align /usr/bin/bowtie2-align \
+    && ln -s /opt/bowtie2/bowtie2-2.3.3/bowtie2-inspect /usr/bin/bowtie2-inspect \
+    && ln -s /opt/bowtie2/bowtie2-2.3.3/bowtie2-build /usr/bin/bowtie2-build \
     && rm bowtie2-2.3.3-linux-x86_64.zip
 
 ##############
